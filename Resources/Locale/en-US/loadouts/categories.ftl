@@ -33,7 +33,7 @@ loadout-category-JobsEngineeringTechnicalAssistant = Technical Assistant
 
 # Epistemics
 loadout-category-JobsEpistemics = Science
-loadout-category-JobsEpistemicsAAUncategorized = All Epistemiologists
+loadout-category-JobsEpistemicsAAUncategorized = All Scientists
 loadout-category-JobsEpistemicsAcolyte = Science
 loadout-category-JobsEpistemicsCataloger = Cataloger
 loadout-category-JobsEpistemicsChaplain = Chaplain
