@@ -137,7 +137,7 @@
 - type: entity
   parent: ClothingShoesBaseWinterBoots
   id: ClothingShoesBootsWinterCargo
-  name: logistics winter boots #Delta V: Rename Logistics
+  name: cargo winter boots #Delta V: Rename Logistics
   components:
   - type: Sprite
     sprite: Clothing/Shoes/Boots/winterbootscargo.rsi

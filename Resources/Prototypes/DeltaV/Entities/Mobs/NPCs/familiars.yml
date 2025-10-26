@@ -2,7 +2,7 @@
   parent: SimpleSpaceMobBase
   id: MobIfritFamiliar
   name: Ifrit
-  description: The mystagogue's servant.
+  description: The Research Director's servant.
   components:
   - type: Sprite
     drawdepth: Mobs

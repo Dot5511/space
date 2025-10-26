@@ -72,8 +72,8 @@
 - type: entity
   parent: ClothingOuterWinterCoat
   id: ClothingLongcoatLO
-  name: logistics officer's longcoat
-  description: A Double-Breasted longcoat, specifically. This one is a saturated brown with mossy trim, fit for the Logistics Officer. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  name: Quartermaster's longcoat
+  description: A Double-Breasted longcoat, specifically. This one is a saturated brown with mossy trim, fit for the Quartermaster. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatLO.rsi
@@ -83,8 +83,8 @@
 - type: entity
   parent: ClothingOuterWinterCoat
   id: ClothingLongcoatRD
-  name: mystagogue's longcoat
-  description: A Double-Breasted longcoat, specifically. This one is a pure white with a purple stripe, fit for the Mystagogue. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  name: Research Director's longcoat
+  description: A Double-Breasted longcoat, specifically. This one is a pure white with a purple stripe, fit for the Research Director. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatRD.rsi

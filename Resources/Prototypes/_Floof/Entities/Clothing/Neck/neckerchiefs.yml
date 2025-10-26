@@ -34,7 +34,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckNeckerchiefCargo
-  name: logistics neckerchief
+  name: cargo neckerchief
   description: A brown sheet of burlap, folded and tied around the neck. The origins of this style remain a mystery to this day.
   components:
     - type: Sprite
@@ -45,7 +45,7 @@
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckNeckerchiefScience
-  name: epistemics neckerchief
+  name: science neckerchief
   description: A stain-resistant sheet of a cotton-polyester blend, folded and tied around the neck. The origins of this style remain a mystery to this day.
   components:
     - type: Sprite

@@ -38,7 +38,7 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetCargo
-  name: logistics headset # DeltaV - Logistics Department replacing Cargo
+  name: cargo headset # DeltaV - Logistics Department replacing Cargo
   description: A headset used by supply employees.
   components:
   - type: ContainerFill
@@ -65,8 +65,8 @@
 - type: entity
   parent: ClothingHeadsetCargo
   id: ClothingHeadsetQM
-  name: logistics officer's headset # DeltaV - Logistics Department replacing Cargo
-  description: A headset used by the logistics officer. # DeltaV - Logistics Department replacing Cargo
+  name: Quartermaster's headset # DeltaV - Logistics Department replacing Cargo
+  description: A headset used by the Quartermaster. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: ContainerFill
     containers:
@@ -167,7 +167,7 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetScience
-  name: epistemics headset # DeltaV - Epistemics Department replacing Science
+  name: science headset # DeltaV - Epistemics Department replacing Science
   description: A sciency headset. Like usual. # DeltaV - Epistemics Department replacing Science
   components:
   - type: ContainerFill

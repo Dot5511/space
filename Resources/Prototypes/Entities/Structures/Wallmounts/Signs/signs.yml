@@ -190,7 +190,7 @@
 - type: entity
   parent: BaseSignDirectional
   id: SignDirectionalSci
-  name: epistemics sign # DeltaV - Epistemics Department replacing Science
+  name: science sign # DeltaV - Epistemics Department replacing Science
   description: A direction sign, pointing out which way the Epistemics department is. # DeltaV - Epistemics Department replacing Science
   components:
   - type: Sprite
@@ -390,8 +390,8 @@
 - type: entity
   parent: BaseSign
   id: SignCargo
-  name: logistics sign # DeltaV - Logistics Department replacing Cargo
-  description: A sign indicating the logistics area. # DeltaV - Logistics Department replacing Cargo
+  name: cargo sign # DeltaV - Logistics Department replacing Cargo
+  description: A sign indicating the cargo area. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Sprite
     state: cargo

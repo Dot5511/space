@@ -164,7 +164,7 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsEpiWarmers
-  name: epistemics arm-warmers
+  name: science arm-warmers
   description: A pair of rather nice arm-warmers, styled for Epistemic roles.
   components:
   - type: Sprite
@@ -183,7 +183,7 @@
 - type: entity
   parent: ClothingShoesBase
   id: ClothingUnderSocksEpi
-  name: epistemics thigh-high socks
+  name: science thigh-high socks
   description: A pair of thigh-high socks, styled for Epistemic roles.
   components:
   - type: Sprite
@@ -194,7 +194,7 @@
 - type: entity
   parent: ClothingUniformThongBase
   id: ClothingUniformEpiThong
-  name: epistemics thong
+  name: science thong
   description: Styled for a Epistemics, but is this even considered a piece of clothing?
   components:
   - type: Sprite
@@ -348,7 +348,7 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsLogisWarmers
-  name: logistics arm-warmers
+  name: cargo arm-warmers
   description: A pair of rather nice arm-warmers, styled for Logistic roles.
   components:
   - type: Sprite
@@ -363,7 +363,7 @@
 - type: entity
   parent: ClothingShoesBase
   id: ClothingUnderSocksLogis
-  name: logistics thigh-high socks
+  name: cargo thigh-high socks
   description: A pair of thigh-high socks, styled for Logistic roles.
   components:
   - type: Sprite
@@ -374,7 +374,7 @@
 - type: entity
   parent: ClothingUniformThongBase
   id: ClothingUniformLogisThong
-  name: logistics thong
+  name: cargo thong
   description: Styled for a Logistics, but is this even considered a piece of clothing?
   components:
   - type: Sprite
@@ -389,7 +389,7 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsLOLogisWarmers
-  name: logistics officer arm-warmers
+  name: cargo officer arm-warmers
   description: A pair of rather nice arm-warmers, styled for Logistic roles.
   components:
   - type: Sprite
@@ -404,7 +404,7 @@
 - type: entity
   parent: ClothingShoesBase
   id: ClothingUnderSocksLOLogis
-  name: logistics officer thigh-high socks
+  name: cargo officer thigh-high socks
   description: A pair of thigh-high socks, styled for Logistic roles.
   components:
   - type: Sprite
@@ -415,7 +415,7 @@
 - type: entity
   parent: ClothingUniformThongBase
   id: ClothingUniformLOLogisThong
-  name: logistics officer thong
+  name: cargo officer thong
   description: Styled for a Logistics, but is this even considered a piece of clothing?
   components:
   - type: Sprite

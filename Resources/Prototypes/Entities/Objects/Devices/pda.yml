@@ -387,10 +387,10 @@
     state: pda-chaplain
 
 - type: entity
-  name: logistics officer PDA # DeltaV - Logistics Department replacing Cargo
+  name: quartermaster PDA # DeltaV - Logistics Department replacing Cargo
   parent: BasePDA
   id: QuartermasterPDA
-  description: PDA for the guy that directs logistics. # DeltaV - Logistics Department replacing Cargo
+  description: PDA for the guy that directs cargo. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Pda
     id: QuartermasterIDCard
@@ -413,7 +413,7 @@
   name: LO special PDA unit # DeltaV - Logistics Department replacing Cargo
   parent: BasePDA
   id: QuartermasterNTPDA
-  description: PDA for the guy that directs logistics.it says in gold "special unit unique to the best logistics officer in the sector". # DeltaV - Logistics Department replacing Cargo
+  description: PDA for the guy that directs cargo. It says in gold "special unit unique to the best quartermaster in the sector". # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Pda
     id: QuartermasterIDCard
@@ -435,7 +435,7 @@
 - type: entity
   parent: BasePDA
   id: CargoPDA
-  name: logistics PDA # DeltaV - Logistics Department replacing Cargo
+  name: cargo PDA # DeltaV - Logistics Department replacing Cargo
   description: PDA for the guys that order the pizzas. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Pda
@@ -814,7 +814,7 @@
 - type: entity
   parent: BasePDA
   id: RnDPDA
-  name: mystagogue PDA # DeltaV - Epistemics Department replacing Science
+  name: Research Director PDA # DeltaV - Epistemics Department replacing Science
   description: It appears surprisingly ordinary.
   components:
   - type: Pda
@@ -838,7 +838,7 @@
   parent: BasePDA
   id: RnDNTPDA
   name: MY special PDA unit # DeltaV - Epistemics Department replacing Science
-  description: It appears surprisingly ordinary.it says in gold "special unit unique to the best Mystagogue in the sector".
+  description: It appears surprisingly ordinary.it says in gold "special unit unique to the best Research Director in the sector".
   components:
   - type: Pda
     id: RDIDCard
@@ -860,7 +860,7 @@
 - type: entity
   parent: BasePDA
   id: SciencePDA
-  name: epistemics PDA # DeltaV - Epistemics Department replacing Science
+  name: science PDA # DeltaV - Epistemics Department replacing Science
   description: It's covered with an unknown gooey substance.
   components:
   - type: Pda

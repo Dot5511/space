@@ -103,7 +103,7 @@
   parent: BaseHypnoTempPlush
   id: PlushieHypnoTempLO
   name: HypnoTemp™ plushie
-  description: A larger than life HypnoTech™ Temporary Staffer plushie! This one is dressed in a sturdy little Logistics Officer uniform.
+  description: A larger than life HypnoTech™ Temporary Staffer plushie! This one is dressed in a sturdy little Quartermaster uniform.
   components:
   - type: Sprite
     sprite: _Floof/Objects/HypnoTempPlushies/staffer_plushies.rsi
@@ -125,7 +125,7 @@
   parent: BaseHypnoTempPlush
   id: PlushieHypnoTempMysta
   name: HypnoTemp™ plushie
-  description: A larger than life HypnoTech™ Temporary Staffer plushie! This one is dressed in an enchanting Mystagogue uniform.
+  description: A larger than life HypnoTech™ Temporary Staffer plushie! This one is dressed in an enchanting Research Director uniform.
   components:
   - type: Sprite
     sprite: _Floof/Objects/HypnoTempPlushies/staffer_plushies.rsi

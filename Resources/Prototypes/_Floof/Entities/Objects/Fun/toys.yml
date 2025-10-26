@@ -509,7 +509,7 @@
 - type: entity
   parent: PlushieHuman
   id: PlushieRatLogisticsOfficer
-  name: rat logistics officer
+  name: rat quartermaster
   description: This plushie smells like milk, the tag reads "Product of Donk Co."
   components:
   - type: Sprite

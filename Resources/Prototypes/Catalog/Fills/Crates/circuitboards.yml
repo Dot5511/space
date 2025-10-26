@@ -15,7 +15,7 @@
   id: CrateRDServerBoard
   parent: CrateScienceSecure
   name: research and development server board
-  description: Has one R&D server board. Requires Epistemics access to open.
+  description: Has one R&D server board. Requires science access to open.
   components:
     - type: StorageFill
       contents:

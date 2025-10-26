@@ -36,10 +36,10 @@
       - id: ParamedicPDA
 
 - type: entity
-  name: epistemics PDA box
+  name: science PDA box
   parent: BoxPDA
   id: BoxPDAScience
-  description: A box of spare PDA microcomputers for the epistemics department.
+  description: A box of spare PDA microcomputers for the science department.
   components:
   - type: Item
     shape:
@@ -68,10 +68,10 @@
       - id: AtmosPDA
 
 - type: entity
-  name: logistics PDA box
+  name: cargo PDA box
   parent: BoxPDA
   id: BoxPDACargo
-  description: A box of spare PDA microcomputers for the logistics department.
+  description: A box of spare PDA microcomputers for the cargo department.
   components:
   - type: StorageFill
     contents:

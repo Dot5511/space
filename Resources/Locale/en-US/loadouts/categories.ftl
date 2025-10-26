@@ -46,7 +46,7 @@ loadout-category-JobsEpistemicsPsionicMantis = Psionic Mantis
 
 # Logistics
 loadout-category-JobsLogistics = Cargo
-loadout-category-JobsLogisticsAUncategorized = All Logistics
+loadout-category-JobsLogisticsAUncategorized = All Cargo
 loadout-category-JobsLogisticsCargoTechnician = Cargo Technician
 loadout-category-JobsLogisticsCourier = Courier
 # Floof - senior cargo
