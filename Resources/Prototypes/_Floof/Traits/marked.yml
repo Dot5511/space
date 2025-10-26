@@ -1,7 +1,7 @@
 - type: trait
   id: TraitorKillTarget
   category: Marked
-  points: 0
+  points: 5
   slots: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -14,22 +14,22 @@
     - type: Marked
       targetType: TraitorKill
 
-- type: trait
-  id: TraitorTeachTarget
-  category: Marked
-  points: 0
-  slots: 0
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Anomaly
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Command # No double-dipping!
-  functions:
-  - !type:TraitAddComponent
-    components:
-    - type: Marked
-      targetType: TraitorTeach
+#- type: trait
+#  id: TraitorTeachTarget
+#  category: Marked
+#  points: 0
+#  slots: 0
+#  requirements:
+#    - !type:CharacterJobRequirement
+#      inverted: true
+#      jobs:
+#        - Anomaly
+#    - !type:CharacterDepartmentRequirement
+#      inverted: true
+#      departments:
+#        - Command # No double-dipping!
+#  functions:
+#  - !type:TraitAddComponent
+#    components:
+#    - type: Marked
+#      targetType: TraitorTeach
