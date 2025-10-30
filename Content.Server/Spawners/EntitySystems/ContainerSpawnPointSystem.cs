@@ -33,8 +33,6 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
         JobPrototype? jobProto = null;
 
         // If it's just a spawn pref check if it's for cryo (silly).
-        // Claw Command disable spawning in cryo.
-        return;
         if (args.HumanoidCharacterProfile?.SpawnPriority != SpawnPriorityPreference.Cryosleep &&
             (!_proto.TryIndex(args.Job?.Prototype, out jobProto) || jobProto.JobEntity == null))
             return;
@@ -62,14 +60,18 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
             }
 
             // If it's unset, then we allow it to be used for both roundstart and midround joins
-            if (spawnPoint.SpawnType == SpawnPointType.Unset)
-            {
-                // make sure we also check the job here for various reasons.
-                if (spawnPoint.Job == null || spawnPoint.Job == args.Job?.Prototype)
-                    possibleContainers.Add((uid, spawnPoint, container, xform));
-                continue;
-            }
 
+            // Claw Command disable spawning in cryo.
+            /*
+                if (spawnPoint.SpawnType == SpawnPointType.Unset)
+                {
+                    // make sure we also check the job here for various reasons.
+                    if (spawnPoint.Job == null || spawnPoint.Job == args.Job?.Prototype)
+                        possibleContainers.Add((uid, spawnPoint, container, xform));
+                    continue;
+                }
+
+                    */
             if (_gameTicker.RunLevel == GameRunLevel.InRound
                 && spawnPoint.SpawnType == SpawnPointType.LateJoin
                 && jobProto.JobEntity == null)
