@@ -1,3 +1,5 @@
+
+
 using Content.Server.Power.EntitySystems;
 using Content.Server.Research.Components;
 using Content.Shared.UserInterface;
@@ -6,6 +8,9 @@ using Content.Shared.Emag.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
+using System.Linq;
+using Content.Shared._ClawCommand.Research;
+using Content.Shared.Research.Components;
 
 namespace Content.Server.Research.Systems;
 
@@ -18,6 +23,8 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchConsoleComponent, ResearchServerPointsChangedEvent>(OnPointsChanged);
         SubscribeLocalEvent<ResearchConsoleComponent, ResearchRegistrationChangedEvent>(OnConsoleRegistrationChanged);
         SubscribeLocalEvent<ResearchConsoleComponent, TechnologyDatabaseModifiedEvent>(OnConsoleDatabaseModified);
+        SubscribeLocalEvent<ResearchConsoleComponent, TechnologyDatabaseSynchronizedEvent>(OnConsoleDatabaseSynchronized);
+
     }
 
     private void OnConsoleUnlock(EntityUid uid, ResearchConsoleComponent component, ConsoleUnlockTechnologyMessage args)
@@ -68,7 +75,48 @@ public sealed partial class ResearchSystem
         if (!Resolve(uid, ref component, ref clientComponent, false))
             return;
 
-        ResearchConsoleBoundInterfaceState state;
+        // R&D Console Rework Start
+        var allTechs = PrototypeManager.EnumeratePrototypes<TechnologyPrototype>().ToList();
+        Dictionary<string, ResearchAvailability> techList;
+        var points = 0;
+
+        if (TryGetClientServer(uid, out var serverUid, out var server, clientComponent) &&
+            TryComp<TechnologyDatabaseComponent>(serverUid, out var db))
+        {
+            var unlockedTechs = new HashSet<string>(db.UnlockedTechnologies);
+            techList = allTechs.ToDictionary(
+                proto => proto.ID,
+                proto =>
+                {
+                    if (unlockedTechs.Contains(proto.ID))
+                        return ResearchAvailability.Researched;
+
+                    var prereqsMet = proto.TechnologyPrerequisites.All(p => unlockedTechs.Contains(p));
+                    var canAfford = server.Points >= proto.Cost;
+
+                    return prereqsMet ?
+                        (canAfford ? ResearchAvailability.Available : ResearchAvailability.PrereqsMet)
+                        : ResearchAvailability.Unavailable;
+                });
+
+            if (clientComponent != null)
+                points = clientComponent.ConnectedToServer ? server.Points : 0;
+        }
+        else
+        {
+            techList = allTechs.ToDictionary(proto => proto.ID, _ => ResearchAvailability.Unavailable);
+        }
+        var softCap = CompOrNull<TechnologyDatabaseComponent>(serverUid)?.SoftCapMultiplier ?? 1;
+
+        _uiSystem.SetUiState(uid, ResearchConsoleUiKey.Key,
+            new ResearchConsoleBoundInterfaceState(points, softCap, techList));
+        // R&D Console Rework End
+        // Goobstation R&D Console Rework commented and replaced with other func
+        //updateFancyConsoleInterface(uid, component, clientComponent);
+
+
+
+        /*ResearchConsoleBoundInterfaceState state;
 
         if (TryGetClientServer(uid, out var serverUid, out var serverComponent, clientComponent))
         {
@@ -82,7 +130,7 @@ public sealed partial class ResearchSystem
             state = new ResearchConsoleBoundInterfaceState(default, default);
         }
 
-        _uiSystem.SetUiState(uid, ResearchConsoleUiKey.Key, state);
+        _uiSystem.SetUiState(uid, ResearchConsoleUiKey.Key, state);*/
     }
 
     private void OnPointsChanged(EntityUid uid, ResearchConsoleComponent component, ref ResearchServerPointsChangedEvent args)
@@ -103,4 +151,10 @@ public sealed partial class ResearchSystem
         UpdateConsoleInterface(uid, component);
     }
 
+    private void OnConsoleDatabaseSynchronized(EntityUid uid, ResearchConsoleComponent component, ref TechnologyDatabaseSynchronizedEvent args)
+    {
+        UpdateConsoleInterface(uid, component);
+    }
+
 }
+

@@ -19,6 +19,11 @@
   - ClothingMaskWeldingGas
   - SalvageExpeditionsComputerCircuitboard
   - ClothingShoesBootsJump
+  # Goobstation R&D Console rework start
+  position: 0,-4
+  technologyPrerequisites:
+  - SpaceScanning
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: AdvancedPowercells
@@ -32,6 +37,11 @@
   recipeUnlocks:
   - PowerCellHigh
   - TurboItemRechargerCircuitboard
+  # Goobstation R&D Console rework start
+  position: 1,-6
+  technologyPrerequisites:
+  - IndustrialEngineering
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: MechanicalCompression
@@ -44,6 +54,11 @@
   cost: 10000
   recipeUnlocks:
   - FlatpackerMachineCircuitboard
+  # Goobstation R&D Console rework start
+  position: 1,-4
+  technologyPrerequisites:
+  - SpaceScanning
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: IndustrialEngineering
@@ -60,6 +75,11 @@
   - CircuitImprinterHyperConvectionMachineCircuitboard
   - SheetifierMachineCircuitboard
   - WelderIndustrial # Floof
+  # Goobstation R&D Console rework start
+  position: 1,-5
+  technologyPrerequisites:
+  - MechanicalCompression
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: PowerGeneration
@@ -78,6 +98,7 @@
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
   - EmitterCircuitboard
+  position: 0,-2
 
 - type: technology
   id: AtmosphericTech
@@ -92,6 +113,11 @@
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
   - AlertsComputerCircuitboard
+  # Goobstation R&D Console rework start
+  position: -2,-4
+  technologyPrerequisites:
+  - SpaceScanning
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: RipleyAPLU
@@ -111,7 +137,11 @@
   - RipleyCentralElectronics
   - RipleyPeripheralsElectronics
   - MechEquipmentGrabber
-
+  # Goobstation R&D Console rework start
+  position: 0,-5
+  technologyPrerequisites:
+  - SalvageEquipment
+  # Goobstation R&D Console rework end
 # Tier 2
 
 - type: technology
@@ -127,6 +157,11 @@
   - RadarConsoleCircuitboard
   - HandHeldMassScanner
   - BorgModuleGPS
+  # Goobstation R&D Console rework start
+  position: 0,-3
+  technologyPrerequisites:
+  - PowerGeneration
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: Shuttlecraft
@@ -142,6 +177,11 @@
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
+  # Goobstation R&D Console rework start
+  position: 2,-4
+  technologyPrerequisites:
+  - MechanicalCompression
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: AdvancedAtmospherics
@@ -156,6 +196,9 @@
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
+  # Goobstation R&D Console rework start
+  position: -2,-5
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: AdvancedToolsTechnology
@@ -173,6 +216,11 @@
     - JawsOfLife
     - BorgModuleAdvancedTool
     - BorgModuleRCD
+  # Goobstation R&D Console rework start
+  position: 2,-5
+  technologyPrerequisites:
+  - Shuttlecraft
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: MassExcavation
@@ -187,6 +235,11 @@
     - OreBagOfHolding
     - MiningDrillDiamond
     - MechEquipmentDrillDiamond
+  # Goobstation R&D Console rework start
+  position: 0,-6
+  technologyPrerequisites:
+  - RipleyAPLU
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: Ripley2
@@ -200,8 +253,11 @@
   recipeUnlocks:
   - RipleyMKIIHarness
   - RipleyUpgradeKit
+  # Goobstation R&D Console rework start
+  position: 0,-7
   technologyPrerequisites:
   - RipleyAPLU
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: Clarke
@@ -224,6 +280,7 @@
   - ClarkePeripheralsElectronics
   technologyPrerequisites:
   - Ripley2
+  position: 0,-8
 
 # Tier 3
 
@@ -242,6 +299,11 @@
   - ClothingBackpackDuffelHolding
   - MaterialSiloCircuitboard
   softCapContribution: 1.5
+  # Goobstation R&D Console rework start
+  position: 2,-7
+  technologyPrerequisites:
+   - PortableFission
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: PortableFission
@@ -255,5 +317,7 @@
   recipeUnlocks:
   - PowerCellMicroreactor
   technologyPrerequisites:
-  - AdvancedPowercells
+  - AdvancedToolsTechnology  # Goobstation R&D Console rework
+  - AdvancedPowercells  # Goobstation R&D Console rework
+  position: 2,-6
   softCapContribution: 1.5

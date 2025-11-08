@@ -72,6 +72,12 @@ public sealed partial class TechnologyPrototype : IPrototype
 
     [DataField]
     public float SoftCapContribution = 1;
+    /// <summary>
+    /// Goobstation R&D console rework field
+    /// Position of this tech in console menu
+    /// </summary>
+    [DataField(required: true)]
+    public Vector2i Position { get; private set; }
 }
 
 [DataDefinition]

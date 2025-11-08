@@ -101,7 +101,7 @@ public sealed partial class ResearchSystem
             record.SoftCapMultiplier = MathF.Max(serverDatabase.SoftCapMultiplier, record.SoftCapMultiplier); // Floofstation - use max here
 
         AddTechnology(serverEnt.Value, prototype);
-        TrySetMainDiscipline(prototype, serverEnt.Value);
+        //TrySetMainDiscipline(prototype, serverEnt.Value);
         ModifyServerPoints(serverEnt.Value, -(int) (prototype.Cost * oldSoftCap)); // TheDen - multiply by the old soft cap instead of the one
         UpdateTechnologyCards(serverEnt.Value);
 

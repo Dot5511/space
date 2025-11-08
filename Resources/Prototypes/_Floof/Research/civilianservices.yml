@@ -13,6 +13,7 @@
   - ClothingHarvestBag
   technologyPrerequisites:
   - Hydroponics
+  position: 2,9
 
 - type: technology
   id: AdvancedTracking
@@ -26,6 +27,7 @@
   recipeUnlocks:
   - HandheldCrewMonitor
   - TrackingImplanter
+  position: 2,10
 
 # Tier 3
 
@@ -41,3 +43,4 @@
   recipeUnlocks:
   - HypoMini
   softCapContribution: 1.5
+  position: 2,11
