@@ -29,6 +29,7 @@
       - id: CargoTechFabCircuitboard # Floof - port to EE if possible
       - id: ClothingEyesGlassesCommand
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
 
 - type: entity
   id: LockerCaptainFilledHardsuit
@@ -55,6 +56,7 @@
         prob: 0.3
       - id: ClothingEyesGlassesCommand
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
 
 - type: entity
   id: LockerCaptainFilled
@@ -80,6 +82,8 @@
         prob: 0.3
       - id: ClothingEyesGlassesCommand
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerCaptainFilledNoLaser
@@ -105,6 +109,8 @@
         prob: 0.3
       - id: ClothingEyesGlassesCommand
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -132,6 +138,8 @@
       - id: ServiceTechFabCircuitboard # Floof - port to ee if possible
       - id: ClothingEyesHudCommand
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerChiefEngineerFilledHardsuit
@@ -163,6 +171,8 @@
         prob: 0.3
       - id: EngineeringTechFabCircuitboard # Floofstation - port to ee if possible
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerChiefEngineerFilled
@@ -190,6 +200,8 @@
         prob: 0.3
       - id: EngineeringTechFabCircuitboard # Floofstation - port to ee if possible
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerChiefMedicalOfficerFilledHardsuit
@@ -221,6 +233,8 @@
         prob: 0.3
       - id: MedicalBiofabMachineBoard # Shitmed Change
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerChiefMedicalOfficerFilled
@@ -249,6 +263,8 @@
         prob: 0.3
       - id: MedicalBiofabMachineBoard # Shitmed Change
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerResearchDirectorFilledHardsuit
@@ -275,6 +291,8 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -299,6 +317,8 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit
@@ -333,6 +353,8 @@
         prob: 0.3
       - id: HyperlinkBookSpaceLaw # Floof - M3739 - #607
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerHeadOfSecurityFilled
@@ -364,6 +386,8 @@
         prob: 0.3
       - id: HyperlinkBookSpaceLaw # Floof - M3739 - #607
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerFreezerVaultFilled
@@ -380,6 +404,8 @@
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
+    - id: TrackingImplanter # Claw Command
+
 
 - type: entity
   id: LockerCentCommFilled # CC Locker
@@ -413,3 +439,4 @@
       - id: ClothingEyesGlassesSunglasses
       - id: ClothingHandsGlovesColorBlack
       - id: PenCentcom
+      - id: TrackingImplanter # Claw Command
