@@ -165,8 +165,8 @@
   - SyringeCryostasis
   # Goobstation R&D Console rework start
   position: 3,5
-  technologyPrerequisites:
-  - AccessibilityTech
+  #technologyPrerequisites:
+  #- AccessibilityTech
   # Goobstation R&D Console rework end
 - type: technology
   id: AdvancedCleaning
@@ -276,7 +276,7 @@
   cost: 10000
   recipeUnlocks:
   - ClothingShoesBootsSpeed
-  softCapContribution: 1.5
+  softCapContribution: 1
   # Goobstation R&D Console rework start
   position: 1,9
   technologyPrerequisites:
@@ -295,7 +295,7 @@
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
-  softCapContribution: 1.25 # Floofstation - reduced due to low utility
+  softCapContribution: 1 # Floofstation - reduced due to low utility
   # Goobstation R&D Console rework start
   position: 2,6
   technologyPrerequisites:
@@ -344,5 +344,5 @@
   - AnimalTranslator
   - MofficTranslatorImplanter
   - ArachnicTranslatorImplanter
-  softCapContribution: 1.3 # Floofstation - reduced due to low utility
+  softCapContribution: 1 # Floofstation - reduced due to low utility
   position: 2,8

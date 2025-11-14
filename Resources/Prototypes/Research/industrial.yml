@@ -298,7 +298,7 @@
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
   - MaterialSiloCircuitboard
-  softCapContribution: 1.5
+  softCapContribution: 1
   # Goobstation R&D Console rework start
   position: 2,-7
   technologyPrerequisites:
@@ -320,4 +320,4 @@
   - AdvancedToolsTechnology  # Goobstation R&D Console rework
   - AdvancedPowercells  # Goobstation R&D Console rework
   position: 2,-6
-  softCapContribution: 1.5
+  softCapContribution: 1

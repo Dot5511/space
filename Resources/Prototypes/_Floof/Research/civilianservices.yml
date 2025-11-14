@@ -42,5 +42,5 @@
   cost: 15000
   recipeUnlocks:
   - HypoMini
-  softCapContribution: 1.5
+  softCapContribution: 1
   position: 2,11
