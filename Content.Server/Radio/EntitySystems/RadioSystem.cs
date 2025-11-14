@@ -19,6 +19,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using Content.Server.Research.Systems;
+using System.Linq;
+using Content.Shared.Research.Components;
+using Content.Shared.Research.Prototypes;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -34,6 +38,7 @@ public sealed class RadioSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly ResearchSystem _research = default!;
 
     // set used to prevent radio feedback loops.
     private readonly HashSet<string> _messages = new();
@@ -81,7 +86,7 @@ public sealed class RadioSystem : EntitySystem
             if (listener != null && !_language.CanUnderstand(listener, args.Language.ID))
                 msg = args.LanguageObfuscatedChatMsg;
 
-            _netMan.ServerSendMessage(new MsgChatMessage { Message = msg}, actor.PlayerSession.Channel);
+            _netMan.ServerSendMessage(new MsgChatMessage { Message = msg }, actor.PlayerSession.Channel);
         }
     }
 
@@ -169,8 +174,26 @@ public sealed class RadioSystem : EntitySystem
             if (!HasComp<GhostComponent>(receiver) && GetFrequency(receiver, channel) != frequency)
                 continue;
 
-            if (!channel.LongRange && transform.MapID != sourceMapId && !radio.GlobalReceive)
-                continue;
+            // Claw Command
+            // Get most advanced server.
+            var database = _research.GetServerIds()
+           .Select(x => _research.TryGetServerById(x, out var serverUid, out _) ? serverUid : null)
+           .Where(x => x != null)
+           .Select(x =>
+           {
+               TryComp<TechnologyDatabaseComponent>(x!.Value, out var comp);
+               return new Entity<TechnologyDatabaseComponent?>(x.Value, comp);
+           })
+           .Where(x => x.Comp != null)
+           .OrderByDescending(x =>
+               _research.GetDisciplineTiers(x.Comp!).Select(pair => pair.Value).Max())
+           .FirstOrDefault(EntityUid.Invalid);
+
+            if (database.Comp == null || !database.Comp.UnlockedTechnologies.Clone().Contains("LongRangeTelecom"))
+            {
+                if (!channel.LongRange && transform.MapID != sourceMapId && !radio.GlobalReceive)
+                    continue;
+            }
 
             // don't need telecom server for long range channels or handheld radios and intercoms
             var needServer = !channel.LongRange && (!hasMicro || !speakerQuery.HasComponent(receiver));
