@@ -1,0 +1,27 @@
+- type: entity
+  name: Trash Remover
+  parent: BaseWeaponRevolver
+  id: WeaponRevolverTrashRemover
+  description: A very rare, special made revolver meant for Claw Command Maid to face the dangers of people trespassers on the bridge. Rosie gold plated.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Weapons/Guns/Revolvers/trash_remover.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-3
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Gun
+    fireRate: 2
+  - type: RevolverAmmoProvider
+    capacity: 5
+    chambers: [ True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null ]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 5000

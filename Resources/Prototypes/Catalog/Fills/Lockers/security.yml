@@ -31,6 +31,7 @@
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
         prob: 0.3
       - id: HyperlinkBookSpaceLaw # Floof - M3739 - #607
+      - id: TrackingImplanter # Claw Command
 
 - type: entity
   id: LockerWardenFilled
@@ -64,6 +65,7 @@
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
         prob: 0.3
       - id: HyperlinkBookSpaceLaw # Floof - M3739 - #607
+      - id: TrackingImplanter # Claw Command
 
 - type: entity
   id: LockerSecurityFilled
@@ -110,6 +112,8 @@
         prob: 0.6
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
         prob: 0.3
+      - id: PinpointerCrew # Claw Command
+      - id: TrackingImplanter # Claw Command
 
 - type: entity
   id: LockerBrigmedicFilled
@@ -149,6 +153,7 @@
 ##        prob: 0.15
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
         prob: 0.3
+      - id: TrackingImplanter # Claw Command
 
 # DeltaV - adding corpsman locker w/ hardsuit
 
@@ -184,6 +189,7 @@
         prob: 0.7
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
         prob: 0.3
+      - id: TrackingImplanter # Claw Command
 
 # DeltaV - end addition
 
@@ -211,6 +217,7 @@
       - id: BoxEvidenceMarkers
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
         prob: 0.3
+      - id: TrackingImplanter # Claw Command
 
 - type: entity
   id: ClosetBombFilled

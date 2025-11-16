@@ -5,10 +5,10 @@
   name: claw command officer ID card
   components:
   - type: Sprite
-    layers:
-    - state: centcom
+    sprite: _ClawCommand/Objects/Misc/id_cards.rsi
+    state: "clawcommand"
   - type: Item
-    heldPrefix: 
+    heldPrefix:
   - type: PresetIdCard
     job: BlueshieldOfficer
   - type: Access

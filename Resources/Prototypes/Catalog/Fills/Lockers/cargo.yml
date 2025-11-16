@@ -30,7 +30,8 @@
         prob: 0.2
       - id: LunchboxLogisticsFilledRandom # DeltaV - Lunchboxes!
         prob: 0.3
-
+      - id: PinpointerStation # Claw Command
+      - id: TrackingImplanter # Claw Command
 - type: entity
   id: LockerSalvageSpecialistFilled
   suffix: Filled
@@ -60,3 +61,5 @@
         prob: 0.2
       - id: LunchboxLogisticsFilledRandom # DeltaV - Lunchboxes!
         prob: 0.3
+      - id: PinpointerStation # Claw Command
+      - id: TrackingImplanter # Claw Command

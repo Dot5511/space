@@ -12,6 +12,9 @@ public sealed partial class GasLeakRuleComponent : Component
         Gas.Ammonia,
         Gas.Plasma,
         Gas.Tritium,
+        // Claw Command increased plasma and tritium leak chance.
+        Gas.Plasma,
+        Gas.Tritium,
         Gas.Frezon,
         Gas.WaterVapor, // the fog
     };
@@ -41,7 +44,7 @@ public sealed partial class GasLeakRuleComponent : Component
     /// </summary>
     public int MaximumMolesPerSecond = 200;
 
-    public int MinimumGas = 1000;
-    public int MaximumGas = 4000;
+    public int MinimumGas = 2500;
+    public int MaximumGas = 6000;
     public float SparkChance = 0.05f;
 }

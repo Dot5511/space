@@ -14,6 +14,7 @@
   - ShuttleGunKineticCircuitboard
   - MechEquipmentKineticAccelerator # Goobstation
   # These are roundstart but not replenishable for salvage
+  position: 1,0 # Goobstation R&D Console rework
 
 - type: technology
   id: DraconicMunitions
@@ -42,6 +43,10 @@
   - CartridgeSpecialIncendiary
   - MagazineBoxSpecialIncendiary
   # End of modified code
+  position: 2,2
+  technologyPrerequisites:
+  - SalvageWeapons
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: WeaponizedLaserManipulation
@@ -55,6 +60,11 @@
   recipeUnlocks:
   - WeaponLaserCarbine
   - WeaponMechCombatFiredartLaser # Goobstation
+  # Goobstation R&D Console rework start
+  position: 4,0
+  #technologyPrerequisites:
+  #- WeaponPlasmaRifleTech
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: NonlethalAmmunition
@@ -99,6 +109,11 @@
   - MagazineBoxPistolRubber # Frontier
   - MagazineBoxRifleRubber # Frontier
   - WeaponMechCombatDisabler # Goobstation
+  # Goobstation R&D Console rework start
+  position: 2,3
+  technologyPrerequisites:
+  - SalvageWeapons
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: UraniumMunitions
@@ -124,6 +139,11 @@
   - BoxShotgunUranium
   - CartridgeSpecialUranium
   - MagazineBoxSpecialUranium
+  # Goobstation R&D Console rework start
+  position: 3,2
+  technologyPrerequisites:
+  - DraconicMunitions
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: AdvancedRiotControl
@@ -142,6 +162,11 @@
   - WeaponDisablerSMG
   - BolaEnergy
   - WeaponHalberd # Floofstation
+  # Goobstation R&D Console rework start
+  position: 3,3
+  technologyPrerequisites:
+  - NonlethalAmmunition
+  # Goobstation R&D Console rework end
 
 # Tier 2
 
@@ -162,6 +187,9 @@
   - FlashPayload
   - ExplosivePayload
   - ChemicalPayload
+  technologyPrerequisites:
+  - SalvageWeapons # Goobstation R&D Console rework
+  position: 2,-1  # Goobstation R&D Console rework
 
 - type: technology
   id: ConcentratedLaserWeaponry
@@ -173,8 +201,13 @@
   tier: 2
   cost: 10000
   recipeUnlocks:
-  - WeaponLaserCannon # 
+  - WeaponLaserCannon #
   - WeaponMechCombatSolarisLaser # Goobstation
+  # Goobstation R&D Console rework start
+  position: 5,0
+  technologyPrerequisites:
+  - WeaponizedLaserManipulation
+  # Goobstation R&D Console rework end
 
 - type: technology
   id: WaveParticleHarnessing
@@ -187,6 +220,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponXrayCannon
+  position: 5,1
 
 - type: technology
   id: BasicShuttleArmament
@@ -208,7 +242,9 @@
   - ShuttleGunPerforatorCircuitboard
   - ShuttleGunFriendshipCircuitboard
   technologyPrerequisites:
-  - SalvageWeapons
+  - ExplosiveTechnology # Goobstation R&D Console rework
+  - Shuttlecraft  # Goobstation R&D Console rework
+  position: 3,-4  # Goobstation R&D Console rework
 
 # Tier 3
 
@@ -225,20 +261,25 @@
   - WeaponAdvancedLaser
   - PortableRecharger
   - WeaponMechCombatImmolationGun # Goobstation
-  softCapContribution: 1.5
-
-- type: technology
-  id: ExperimentalBatteryAmmo
-  name: research-technology-experimental-battery-ammo
-  icon:
-    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 3
-  cost: 15000
-  recipeUnlocks:
-  - WeaponLaserSvalinn
-  softCapContribution: 1.25 # Floofstation - reduced due to low utility
+  softCapContribution: 1
+  # Goobstation R&D Console rework start
+  position: 6,0
+  technologyPrerequisites:
+  - ConcentratedLaserWeaponry
+  # Goobstation R&D Console rework end
+#Goobstation/clawcommand tech disable.
+#- type: technology
+#  id: ExperimentalBatteryAmmo
+#  name: research-technology-experimental-battery-ammo
+#  icon:
+#    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+#    state: icon
+#  discipline: Arsenal
+#  tier: 3
+#  cost: 15000
+#  recipeUnlocks:
+#  - WeaponLaserSvalinn
+#  softCapContribution: 1.25 # Floofstation - reduced due to low utility
 
 - type: technology
   id: AdvancedShuttleWeapon
@@ -253,6 +294,8 @@
   - GrenadeEMP
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
+  softCapContribution: 1 # Floofstation - reduced due to low utility
   technologyPrerequisites:
   - BasicShuttleArmament
-  softCapContribution: 1.25 # Floofstation - reduced due to low utility
+  - Shuttlecraft  # Goobstation R&D Console rework
+  position: 4,-4  # Goobstation R&D Console rework

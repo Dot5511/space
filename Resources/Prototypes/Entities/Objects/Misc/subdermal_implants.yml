@@ -104,7 +104,7 @@
       mobState:
       - Critical
     - type: Rattle
-      radioChannel: "Medical" # Floof change medical should know when a mass cass happen
+      radioChannel: "Common"
 
 #Traitor implants
 

@@ -16,6 +16,7 @@
   - BoxShellHoly # Floofstation
   - ShellSoulbreaker # Nyanotrasen - Soulbreaker shotgun ammo
   - BoxShellSoulbreaker # Floofstation
+  position: -4,0
 
 - type: technology
   id: EnergyGuns
@@ -29,6 +30,7 @@
   recipeUnlocks:
   - WeaponEnergyGun
   - WeaponEnergyGunMini
+  position: -4,1
 
 - type: technology
   id: EnergyGunsAdvanced
@@ -41,6 +43,7 @@
   cost: 7500
   recipeUnlocks:
   - WeaponEnergyGunPistol
+  position: -4,2
 
 - type: technology
   id: Advanced Laser Manipulation
@@ -53,5 +56,4 @@
   cost: 12500
   recipeUnlocks:
   - WeaponGunLaserCarbineAutomatic
-
-
+  position: -4,3

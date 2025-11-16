@@ -99,7 +99,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
     private void OnScreenLoad()
     {
-       LoadGui();
+        LoadGui();
     }
 
     private void OnScreenUnload()
@@ -458,7 +458,9 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
                 if (page[i] == actionId)
                 {
                     page[i] = null;
-                    (_container.GetChild(i) as ActionButton)?.ClearData();
+                    var button = _container.GetChild(i) as ActionButton;
+                    if (button != null && button.ActionId == actionId)
+                        button.ClearData();
                 }
             }
         }
@@ -559,7 +561,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
                 continue;
             }
 
-            var button = new ActionButton(_entMan, _spriteSystem, this) {Locked = true};
+            var button = new ActionButton(_entMan, _spriteSystem, this) { Locked = true };
             button.ActionPressed += OnWindowActionPressed;
             button.ActionUnpressed += OnWindowActionUnPressed;
             button.ActionFocusExited += OnWindowActionFocusExisted;
@@ -662,7 +664,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
     private void DragAction()
     {
-        if (_menuDragHelper.Dragged is not {ActionId: {} action} dragged)
+        if (_menuDragHelper.Dragged is not { ActionId: { } action } dragged)
         {
             _menuDragHelper.EndDrag();
             return;
@@ -795,7 +797,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         if (_actionsSystem != null && _actionsSystem.TryGetActionData(_menuDragHelper.Dragged?.ActionId, out var action))
         {
             if (EntityManager.TryGetComponent(action.EntityIcon, out SpriteComponent? sprite)
-                && sprite.Icon?.GetFrame(RsiDirection.South, 0) is {} frame)
+                && sprite.Icon?.GetFrame(RsiDirection.South, 0) is { } frame)
                 _dragShadow.Texture = frame;
             else if (action.Icon != null)
                 _dragShadow.Texture = _spriteSystem.Frame0(action.Icon);
@@ -917,7 +919,7 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     public override void FrameUpdate(FrameEventArgs args)
     {
         _menuDragHelper.Update(args.DeltaSeconds);
-        if (_window is {UpdateNeeded: true})
+        if (_window is { UpdateNeeded: true })
             SearchAndDisplay();
     }
 

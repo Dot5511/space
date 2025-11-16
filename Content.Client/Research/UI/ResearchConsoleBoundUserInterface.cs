@@ -1,3 +1,5 @@
+using System.Linq;
+using Content.Client._ClawCommand.Research.UI;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
 using JetBrains.Annotations;

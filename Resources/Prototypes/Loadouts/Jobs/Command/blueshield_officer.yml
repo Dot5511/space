@@ -11,6 +11,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
+        - BlueshieldMaid
   items:
     - ClothingBackpackBlueshield
 
@@ -19,6 +20,17 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutMartialArtsBlueshieldCQC
+  category: JobsCommandBlueshieldOfficer
+  cost: 10
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - BSOManual
 
 # Eyes
 
@@ -44,6 +56,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
+        - BlueshieldMaid
   items:
     - ClothingBlueshieldArmoredJacket
 
@@ -58,6 +71,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
+        - BlueshieldMaid
   items:
     - ClothingBlueshieldArmoredCowboyJacket
 
@@ -75,6 +89,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
+        - BlueshieldMaid
   items:
     - ClothingUniformJumpskirtBlueshieldOfficer
 
@@ -89,5 +104,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
+        - BlueshieldMaid
   items:
     - ClothingUniformJumpsuitBlueshieldOfficer

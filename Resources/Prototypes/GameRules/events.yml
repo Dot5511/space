@@ -39,10 +39,10 @@
   - type: StationEvent
     weight: 8
     duration: 35
-    conditions: # Floof - at least one epi member
-    - !type:DepartmentCountCondition
-      department: Epistemics
-      range: {min: 1}
+    #conditions: # Floof - at least one epi member
+    #- !type:DepartmentCountCondition
+    #  department: Epistemics
+    #  range: {min: 1}
   - type: AnomalySpawnRule
 
 - type: entity
@@ -85,7 +85,7 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    minimumPlayers: 3
+    minimumPlayers: 15
     weight: 3
     duration: 1
   - type: BureaucraticErrorRule
@@ -97,7 +97,7 @@
   components:
   - type: StationEvent
     startAnnouncement: true
-    minimumPlayers: 3
+    minimumPlayers: 30
     weight: 5
     duration: 1
   - type: ClericalErrorRule
@@ -122,9 +122,9 @@
   - type: StationEvent
     weight: 6 # Floof - changed from 6.5
     duration: 1
-    earliestStart: 120 # Floof
-    reoccurrenceDelay: 60
-    minimumPlayers: 40 # Floof
+    earliestStart: 20 # Floof
+    reoccurrenceDelay: 10
+    minimumPlayers: 2 # Floof
   - type: RandomSpawnRule
     prototype: SpawnPointGhostDragon
 
@@ -136,7 +136,7 @@
   - type: StationEvent
     weight: 7
     duration: 1
-    earliestStart: 60 #Floof
+    earliestStart: 20 #Floof
     reoccurrenceDelay: 60 # Floof
     minimumPlayers: 3
   - type: SpaceSpawnRule
@@ -232,17 +232,17 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    earliestStart: 30
+    earliestStart: 20
     weight: 7.5
     minimumPlayers: 2 # Floof
     startAnnouncement: true
     endAnnouncement: true
     duration: null #ending is handled by MeteorSwarmRule
-    startDelay: 30
-    conditions: # Floof
-    - !type:DepartmentCountCondition
-      department: Engineering
-      range: {min: 2}
+    startDelay: 10
+    #conditions: # Floof
+    #- !type:DepartmentCountCondition
+    #  department: Engineering
+    #  range: {min: 2}
   - type: MeteorSwarmRule
 
 - type: entity
@@ -254,7 +254,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 6
+    weight: 3
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -296,7 +296,7 @@
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
-    weight: 6
+    weight: 2
     duration: 50
   - type: VentCrittersRule
     entries:
@@ -407,7 +407,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 20
-    minimumPlayers: 5
+    minimumPlayers: 4
     weight: 5
     duration: 60
   - type: VentCrittersRule
@@ -464,7 +464,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    earliestStart: 60
+    earliestStart: 20
     minimumPlayers: 3
     weight: 2
     duration: 1
@@ -498,9 +498,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    earliestStart: 35 # Claw Command - Changed from 60
+    earliestStart: 20 # Claw Command - Changed from 60
     weight: 3 # Floof - Changed from 5.5
-    minimumPlayers: 3 # Claw Command - changed from 30
+    minimumPlayers: 4 # Claw Command - changed from 30
     duration: 1
   - type: LoadMapRule
     preloadedGrid: ShuttleStriker
@@ -533,7 +533,7 @@
   id: SleeperAgents
   components:
   - type: StationEvent
-    earliestStart: 25
+    earliestStart: 20
     weight: 8
     minimumPlayers: 2
     reoccurrenceDelay: 30
@@ -579,7 +579,7 @@
     startAnnouncement: false
     weight: 2
     duration: 1
-    earliestStart: 45
+    earliestStart: 20
     minimumPlayers: 8
   - type: ImmovableRodRule
 

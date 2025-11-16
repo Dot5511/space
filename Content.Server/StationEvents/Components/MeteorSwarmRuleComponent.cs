@@ -18,7 +18,7 @@ public sealed partial class MeteorSwarmRuleComponent : Component
     public int MinimumWaves = 3;
 
     [DataField("maximumWaves")]
-    public int MaximumWaves = 8;
+    public int MaximumWaves = 10;
 
     [DataField("minimumCooldown")]
     public float MinimumCooldown = 10f;

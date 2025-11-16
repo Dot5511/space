@@ -14,6 +14,15 @@
       id: LoadoutClothingBlueshieldArmoredJacket
     - type: loadout
       id: LoadoutClothingBlueshieldArmoredCowboyJacket
+    - type: loadout
+      id: LoadoutClothingBlueshieldMaidDuraVest
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldMaidWeapons
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBlueshieldMaidRevolver
 
 - type: characterItemGroup
   id: LoadoutBlueshieldMaidUniforms
