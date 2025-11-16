@@ -8,14 +8,14 @@
     },
     "states": [
         {
-            "name": "mattew"
+            "name": "mattew-plushie"
         },
         {
-            "name": "mattew_inhand_left",
+            "name": "mattew-inhand-left",
             "directions": 4
         },
         {
-            "name": "mattew_inhand_right",
+            "name": "mattew-inhand-right",
             "directions": 4
         }
     ]

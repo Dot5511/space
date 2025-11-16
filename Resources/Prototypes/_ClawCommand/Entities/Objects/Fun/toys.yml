@@ -34,11 +34,13 @@
   parent: BasePlushie
   id: mattew_plushie
   name: Mattew Chief plushie
-  description:  A much more pettable version of Mattew Chief. Has very soft fur.
+  description:  A much more pettable version of Mattew Chief. It seems like it had ruff day.
   components:
   - type: Sprite
     sprite: _ClawCommand/Objects/Fun/mattew_plushie.rsi
-    state: mattew
+    state: mattew-plushie
+  - type: Item
+    heldPrefix: mattew
   - type: EmitSoundOnUse
     sound: &PlushieVulpSound
       path: /Audio/DeltaV/Voice/Vulpkanin/dog_snarl2.ogg
