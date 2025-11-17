@@ -28,9 +28,11 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
 
     public ISawmill _sawmill { get; private set; } = default!;
 
-    private bool _eaEnabled = true;
-    private TimeSpan _acoDelay = TimeSpan.FromMinutes(10);
+    private TimeSpan _acoDelay = TimeSpan.FromSeconds(10);
     private int _maxDoctorsForEA = 1;
+    private bool _isAAInPlay = false;
+    private int _doctorCount = 0;
+    private int _latestRound = 0;
 
     public override void Initialize()
     {
@@ -38,30 +40,34 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
 
         SubscribeLocalEvent<EmergencyAccessMedbayStateComponent, PlayerJobAddedEvent>(OnPlayerJobAdded);
         SubscribeLocalEvent<EmergencyAccessMedbayStateComponent, PlayerJobsRemovedEvent>(OnPlayerJobsRemoved);
-
         base.Initialize();
     }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
         var timePassed = _ticker.RoundDuration();
         if (timePassed < _acoDelay) // Avoid timing issues. No need to run before _acoDelay is reached anyways.
             return;
+        if (_latestRound != _ticker.RoundId)
+        {
+            _latestRound = _ticker.RoundId;
 
+            _isAAInPlay = false;
+            _doctorCount = 0;
+        }
 
         var query = EntityQueryEnumerator<EmergencyAccessMedbayStateComponent>();
         while (query.MoveNext(out var station, out var captainState))
         {
 
-            if (captainState.DoctorCount <= _maxDoctorsForEA)
+            if (_doctorCount <= _maxDoctorsForEA)
                 HandleNoDoctors(station, captainState, timePassed);
             else
             {
-                if (captainState.IsAAInPlay)
+                if (_isAAInPlay)
                 {
-                    captainState.IsAAInPlay = false;
-                    _chat.DispatchStationAnnouncement(station, Loc.GetString(captainState.RevokeACOMessage), colorOverride: Color.Yellow);
+                    _isAAInPlay = false;
+                    _chat.DispatchStationAnnouncement(station, Loc.GetString("doctors-arrived-revoke-aco-announcement"), colorOverride: Color.Yellow);
 
                     var qquery = EntityQueryEnumerator<AirlockComponent>();
                     while (qquery.MoveNext(out var airlockID, out var airlockComp))
@@ -90,7 +96,7 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
           args.JobPrototypeId == "Chemist" ||
           args.JobPrototypeId == "Paramedic")
         {
-            ent.Comp.DoctorCount += 1;
+            _doctorCount += 1;
         }
     }
 
@@ -109,9 +115,9 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
        stationJobs.PlayerJobs.Any(playerJobs => playerJobs.Value.Contains("Paramedic"))
        ) // We check the PlayerJobs if there are any cpatins left
             return;
-        ent.Comp.DoctorCount -= 1;
-        if (ent.Comp.DoctorCount < 0)
-            ent.Comp.DoctorCount = 0;
+        _doctorCount -= 1;
+        if (_doctorCount < 0)
+            _doctorCount = 0;
     }
 
 
@@ -125,8 +131,8 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
 
         if (CheckUnlockAA(captainState, currentTime))
         {
-            captainState.IsAAInPlay = true;
-            _chat.DispatchStationAnnouncement(station, Loc.GetString(captainState.AAUnlockedMessage), colorOverride: Color.Yellow);
+            _isAAInPlay = true;
+            _chat.DispatchStationAnnouncement(station, Loc.GetString("no-doctors-aa-unlocked-announcement"), colorOverride: Color.Yellow);
 
             // Extend access of spare id lockers to command so they can access emergency AA
             var query = EntityQueryEnumerator<AirlockComponent>();
@@ -155,7 +161,7 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
     /// <returns>True if conditions are met for AA to be unlocked, False otherwise</returns>
     private bool CheckUnlockAA(EmergencyAccessMedbayStateComponent captainState, TimeSpan? currentTime)
     {
-        if (captainState.IsAAInPlay || !_eaEnabled)
+        if (_isAAInPlay)
             return false;
         return currentTime == null || currentTime > _acoDelay;
     }

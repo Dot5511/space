@@ -14,34 +14,38 @@ public sealed class CodeBlueSecretStateSystem : EntitySystem
     [Dependency] protected readonly ILogManager _logManager = default!;
 
     public ISawmill _sawmill { get; private set; } = default!;
-    private TimeSpan _acoDelay = TimeSpan.FromMinutes(5);
+    private TimeSpan _acoDelay = TimeSpan.FromSeconds(10);
+    private bool _isAutoCodeBlueInPlay = false;
+    private int _latestRound = 0;
     public override void Initialize()
     {
         base.Initialize();
         _sawmill = _logManager.GetSawmill("autocodeblue");
-
     }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
         var timePassed = _ticker.RoundDuration();
         if (timePassed < _acoDelay) // Avoid timing issues. No need to run before _acoDelay is reached anyways.
             return;
-
+        if (_latestRound != _ticker.RoundId)
+        {
+            _latestRound = _ticker.RoundId;
+            _isAutoCodeBlueInPlay = false;
+        }
         if (_ticker.IsGameRuleAdded<SecretRuleComponent>())
         {
 
-            var query = EntityQueryEnumerator<EmergencyAccessMedbayStateComponent>();
+            var query = EntityQueryEnumerator<CodeBlueSecretStateComponent>();
             while (query.MoveNext(out var station, out var c))
             {
 
-                if (c.IsAutoCodeBlueInPlay)
+                if (_isAutoCodeBlueInPlay)
                 {
                     continue;
                 }
 
-                c.IsAutoCodeBlueInPlay = true;
+                _isAutoCodeBlueInPlay = true;
                 if (_alertLevelSystem.GetLevel(station) == "green")
                 {
                     _alertLevelSystem.SetLevel(station, "blueAuto", true, true);
