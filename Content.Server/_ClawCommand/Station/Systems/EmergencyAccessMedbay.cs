@@ -29,7 +29,7 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
     public ISawmill _sawmill { get; private set; } = default!;
 
     private TimeSpan _acoDelay = TimeSpan.FromMinutes(10);
-    private int _maxDoctorsForEA = 1;
+    private int _maxDoctorsForEA = 2;
     private bool _isAAInPlay = false;
     private int _doctorCount = 0;
     private int _latestRound = 0;
