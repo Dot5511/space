@@ -78,12 +78,12 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             return;
 
         // Claw Command
-        /*if (_adminManager.IsAdmin(player))
+        if (_adminManager.IsAdmin(player))
         {
             trackers.Add(PlayTimeTrackingShared.TrackerAdmin);
-            trackers.Add(PlayTimeTrackingShared.TrackerOverall);
-            return;
-        }*/
+            //trackers.Add(PlayTimeTrackingShared.TrackerOverall);
+            //return;
+        }
 
         if (!IsPlayerAlive(player))
             return;
