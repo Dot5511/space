@@ -38,6 +38,8 @@
   - Kitchen
   - Hydroponics
   - Theatre
+  - Cargo
+  - Salvage
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
